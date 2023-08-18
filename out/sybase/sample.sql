@@ -1,0 +1,1 @@
+select * from cobis..cl_ente;

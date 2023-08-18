@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-20">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="C:/Program Files/CData/CData JDBC Driver for Sybase 2023/lib/cdata.jdbc.sybase.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/dchango/Downloads/snakeyaml-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dchango/Downloads/java-dotenv-5.2.2.jar"/>
+	<classpathentry kind="src" path="/dotenv-java-master"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
