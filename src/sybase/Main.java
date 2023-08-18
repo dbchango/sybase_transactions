@@ -7,8 +7,36 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
+import sybase.service.DeudorService;
+import sybase.utils.Tool;
+
 public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
+    	
+    	DeudorService servicio_deudor = new DeudorService();
+    	
+    	String sql_process = args[0]; // sql flow process option
+    	
+    	int result;
+    	
+    	if ("score_fna".matches(sql_process)) {
+    		result = servicio_deudor.UpdateScore(args[1]);
+    	} else if ("capacidad_pago_preliminar".matches(sql_process)) {
+    		result = servicio_deudor.InsertarCapacidadDePagoComercial(args[1], args[2]);
+    	} else if ("insertar_datos_sabana_comercial".matches(sql_process)) {
+    		result = servicio_deudor.InsertarDatosSabanaComercial(args[1], args[2]);
+    	} else {
+    		result = 0;
+    	}
+    	
+    	if (result == 1) {
+        	System.out.println("Transacción exitosa");
+        } else {
+        	System.out.println("Hubo un problema al ejecutar la transacción");
+        }
+    	
+    	/*
+    	
     	Tool util_tool = new Tool();
     	String resourceName = "myconf.properties";
     	String sql_process = "";
@@ -33,8 +61,10 @@ public class Main {
     				+ ";Port=" + props.get("database.port");
     	
     	Class.forName("cdata.jdbc.sybase.SybaseDriver");
+    	
         Connection connection = DriverManager.getConnection(connection_string);
         Statement stat = connection.createStatement();
+        
         if ("score_fna".matches(sql_process)) {
     		sql_query = "update cob_credito..cr_deudores set de_cif = 'SCOREFNAHD', de_score_cif = 700, de_fecha_cif = '05/26/2023' where de_tramite = " + secuencial_tramite + ";";
         }else if ("capacidad_pago_preliminar".matches(sql_process )) {
@@ -52,5 +82,6 @@ public class Main {
         } else {
         	System.out.println("Hubo un problema al ejecutar la transacción");
         }
+        */
     }
 }

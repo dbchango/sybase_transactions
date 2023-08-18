@@ -1,4 +1,4 @@
-package sybase;
+package sybase.utils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -23,8 +23,9 @@ public class Tool {
 	
 	public String extractSQL(String file_path) throws IOException {
 		FileReader fr = new FileReader(file_path);
-    	BufferedReader br = new BufferedReader(fr);
-		return br.readLine();
+    	try (BufferedReader br = new BufferedReader(fr)) {
+			return br.readLine();
+		}
 	}
 
 }
