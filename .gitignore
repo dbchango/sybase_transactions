@@ -25,3 +25,6 @@ replay_pid*
 
 # configuration files
 *.properties
+
+./src/myconf.properties
+src/myconf.properties
